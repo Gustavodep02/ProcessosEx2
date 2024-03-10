@@ -54,9 +54,9 @@ public class KillController {
 public void mataNome(String nome) {
 	String os= os();
 	Process process;
-	String processo = ("TASKKILL /IM "+nome);
+	String processo = ("pkill -f "+nome);
 	if (os.contains("Windows")) {
-		processo = ("TASKKILL /F /PID "+nome);
+		processo = ("TASKKILL /IM "+nome);
 	}
 	try {
 		process =Runtime.getRuntime().exec(processo);
